@@ -1,0 +1,49 @@
+{
+    "emailSettings": {
+        "sendEmail": false,
+        "emailAddress": "",
+        "account": {
+            "emailAddress": "",
+            "emailPassword": ""
+        }
+    },
+    "startWith": {
+        "caseSensitive": true,
+        "strings": [
+            "0x12345678"
+        ]
+    },
+    "endWith": {
+        "caseSensitive": true,
+        "strings": [
+            "87654321"
+        ]
+    },
+    "contain": {
+        "caseSensitive": true,
+        "strings": [
+            "13333337"
+        ]
+    },
+    "equal": {
+        "caseSensitive": true,
+        "strings": [
+            "0x0000000000000000000000000000000000000000"
+        ]
+    },
+    "exactList": {
+        "caseSensitive": true,
+        "lists": [
+            [
+                {
+                    "startOffset": 2,
+                    "value": "12345"
+                },
+                {
+                    "startOffset": 37,
+                    "value": "54321"
+                }
+            ]
+        ]
+    }
+}
