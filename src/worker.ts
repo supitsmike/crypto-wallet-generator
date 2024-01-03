@@ -83,7 +83,7 @@ function checkAddress(searchCriteria: SearchCriteria, address: string): boolean 
     return false;
 }
 
-parentPort.on('message', (searchCriteria: SearchCriteria) => {
+parentPort.on('message', async (searchCriteria: SearchCriteria) => {
     while (true) {
         let account = web3.eth.accounts.create();
         if (checkAddress(searchCriteria, account.address)) {
@@ -105,13 +105,16 @@ parentPort.on('message', (searchCriteria: SearchCriteria) => {
                         subject: 'Generated a wallet address',
                         text: `The wallet address '${account.address}' was generated and saved.`
                     };
-                    transporter.sendMail(mailOptions, function (error, info) {
-                        if (error) {
-                            console.error(error);
-                        }
-                    });
+                    await transporter.sendMail(mailOptions);
                 } catch (error) {
-                    console.error(error);
+                    var message: string = '';
+                    if (typeof error === "string") {
+                        message = error.toUpperCase();
+                    } else if (error instanceof Error) {
+                        message = error.message;
+                    }
+                    fs.unlinkSync(`wallets/${account.address}.json`);
+                    fs.writeFileSync(`wallets/error_${account.address}.json`, JSON.stringify({error: message}));
                 }
             }
         }
