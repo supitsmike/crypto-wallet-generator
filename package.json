@@ -18,7 +18,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "nodemailer": "^6.9.7",
+    "nodemailer": "^6.9.9",
     "prompt-sync": "^4.2.0",
     "web3": "^4.2.2"
   }
