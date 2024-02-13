@@ -3,7 +3,7 @@ This repository contains a project that will allow you to generate specific cryp
 
 ## Disclaimer
 
-The odds of generating an exact crypto address is 16^40... Thats a 1 in 1461501637330902918203684832716283019655932542976 chance so don't think you will just be able to generate someone elses wallet address.
+The odds of generating an exact crypto address is 2^256... Thats a 1 in 115792089237316195423570985008687907853269984665640564039457584007913129639936 chance so don't think you will just be able to generate someone elses wallet address.
 
 ## Quick start
 
